@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-
+  # Defines a proto-feed.
+  # See "Following users" for the full implementation.
+  def feed
+    Quiz.where("user_id = ?", id)
+  end
   # Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64

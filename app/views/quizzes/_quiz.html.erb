@@ -4,5 +4,9 @@
   <span class="student"><%= quiz.student %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(quiz.created_at) %> ago.
+    <% if current_user?(quiz.user) %>
+      <%= link_to "delete", quiz, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>    
   </span>
 </li>
