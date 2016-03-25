@@ -2,8 +2,9 @@
   <%= link_to gravatar_for(quiz.user, size: 50), quiz.user %>
   <span class="user"><%= link_to quiz.user.name, quiz.user %></span>
   <span class="student"><%= quiz.student %></span>
+  <span class="student"><%= quiz.score %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(quiz.created_at) %> ago.
+    Posted <%= (quiz.created_at) %> 
     <% if current_user?(quiz.user) %>
       <%= link_to "delete", quiz, method: :delete,
                                        data: { confirm: "You sure?" } %>

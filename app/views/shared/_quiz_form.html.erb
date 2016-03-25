@@ -3,5 +3,8 @@
   <div class="field">
     <%= f.text_field :student, placeholder: "Student Name" %>
   </div>
-  <%= f.submit "Begin New Quiz", class: "btn btn-primary" %>
+  <div class="field">
+    <%= f.text_field :score, placeholder: "How many words did the student get?" %>
+  </div>  
+  <%= f.submit "Submit Quiz Score", class: "btn btn-primary" %>
 <% end %>

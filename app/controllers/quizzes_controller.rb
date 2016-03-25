@@ -5,7 +5,7 @@ class QuizzesController < ApplicationController
   def create
     @quiz = current_user.quizzes.build(quiz_params)
     if @quiz.save
-      flash[:success] = "Quiz created!"
+      flash[:success] = "Quiz added!"
       redirect_to root_url
     else
       @feed_items = []
@@ -22,7 +22,7 @@ class QuizzesController < ApplicationController
   private
 
     def quiz_params
-      params.require(:quiz).permit(:student)
+      params.require(:quiz).permit(:student, :score)
     end  
     def correct_user
       @quiz = current_user.quizzes.find_by(id: params[:id])

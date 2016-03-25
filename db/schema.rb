@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325042726) do
+ActiveRecord::Schema.define(version: 20160325111256) do
 
   create_table "quiz_scores", force: :cascade do |t|
     t.boolean  "correct"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160325042726) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "score"
   end
 
   add_index "quizzes", ["user_id", "created_at"], name: "index_quizzes_on_user_id_and_created_at"
