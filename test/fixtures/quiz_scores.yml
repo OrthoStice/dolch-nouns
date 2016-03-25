@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  correct: false
+  slide_id: 
+  quiz_id: 
+
+two:
+  correct: false
+  slide_id: 
+  quiz_id: 
