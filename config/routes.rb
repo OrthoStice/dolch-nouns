@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :students
   resources :users
+  resources :quizzes,          only: [:create, :destroy]
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
