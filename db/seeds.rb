@@ -20,3 +20,9 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  student = Faker::Name.name
+  users.each { |user| user.quizzes.create!(student: student) }
+end
